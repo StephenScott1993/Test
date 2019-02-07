@@ -22,7 +22,8 @@ class Category(models.Model):
 
 
 class Page(models.Model):
-    category = models.ForeignKey(Category, on_delete="CASCADE")
+    # category = models.ForeignKey(Category, on_delete="CASCADE")
+    category = models.ForeignKey(Category)
     title = models.CharField(max_length=128)
     url = models.URLField()
     views = models.IntegerField(default=20)
@@ -34,8 +35,8 @@ class Page(models.Model):
 
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
-    user = models.OneToOneField(User, on_delete="CASCADE")
-
+    # user = models.OneToOneField(User, on_delete="CASCADE")
+    user = models.OneToOneField(User)
     # The additional attributes we wish to include.
     website = models.URLField(blank=True)
     picture = models.ImageField(upload_to='profile_images', blank=True)
