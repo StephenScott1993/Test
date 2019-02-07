@@ -1,0 +1,17 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block body_block %}
+		<h1>This is the about page</h1>
+		<div>
+			Rango says here is the about page<br/>
+			<strong>{{ welcomemessage}}</strong><br/>
+		</div>
+		<div>
+			<a href={{linkURL}}>{{textURL}}</a><br/>
+			<img src="{{MEDIA_URL}}cat.jpg" alt="you IRL" />
+		</div>
+{% endblock %}
